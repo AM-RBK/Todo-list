@@ -101,7 +101,12 @@ $(document).ready(function() {
 		console.log(task);
 
 		listCollec[listId].removeTask(task);
-		alert('task removed');
+
+		if(listCollec[listId].tasks.length === 0){
+			listCollec.splice(listId, 1);
+		}
+
+		alert('Task removed');
 	}
 
 	function completeTask(listId, taskId) {
@@ -134,16 +139,18 @@ $(document).ready(function() {
                     <div class="col-12">
                         <div class="content-wrap">
                             <p>${content}</p>
-                            <small class="date">${task.created_at.toLocaleString()}</small>
+                            <small class="date">${new Date(task.created_at).toLocaleString()}</small>
                         </div>
                     </div>
                     <div class="col align-vertical-center">
                         <div>
-                            <button title="Delete Task" class="btn-dodger task-remove-btn" data-list-id="${i}" data-task-id="${task.id}">&cross;
+                            <button title="Delete Task" class="btn-dodger task-remove-btn btn-round" data-list-id="${i}" data-task-id="${task.id}">&cross;
                             </button>
+                            <small class="desc">Remove</small>
                               <label class="checkbox-container">
                                     <input ${task.isComplete ? 'checked':''} type="checkbox" name="Complete" data-task-id="${task.id}" data-list-id="${i}" title="Toggle Status" class="task-complete-btn">
                                     <span class="checkmark"></span>
+                                    <small>${task.isComplete ? '' : 'Mark'} Complete</small>
                               </label>
                         </div>
                     </div>

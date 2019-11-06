@@ -102,7 +102,7 @@ main {
     padding: 1%;
     border: 1px solid #00000033;
     box-shadow: 1px 1px #c1c1c1;
-    font-family: 'Merriweather', serif;
+    font-family: 'Raleway', sans-serif;
     width: 70%;
     margin: 0 auto;
     background: rgba(102, 102, 102, 0.79);
@@ -121,7 +121,7 @@ button {
     border-radius: 1.3px;
     color: white;
     padding: 0.4rem;
-    font-family: 'Merriweather', serif;
+    font-family: 'Raleway', sans-serif;
 }
 
 .btn-green {
@@ -232,4 +232,32 @@ select {
     background: rgb(202, 38, 38);
     padding: 0.4rem;
     border-radius: 5px;
+}
+
+.checkbox-container > small, .desc {
+  font-size: 0.7rem;
+  display: flex;
+}
+
+.desc {
+  display: inline-flex;
+  margin-left: 0.3rem;
+}
+
+.text-center {
+  text-align: center;
+  font-family: 'Staatliches', cursive;
+}
+
+.title {
+  font-size: 40px;
+  padding: 0px;
+  margin: 0px;
+}
+
+.btn-round {
+  width: 30px;
+  height: 30px;
+  border-radius: 30px;
+  background: #0073aa;
 }
